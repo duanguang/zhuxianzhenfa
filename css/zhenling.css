@@ -152,7 +152,7 @@
 	float: left;
 	height: 20px;
 	margin-top: 5px;
-	width: 130px;
+	width: 155px;
 	color: #cfa43c;
 }
 
@@ -181,8 +181,23 @@
 	width: 500px;
 	float: left;
 	margin: 6px;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	height: .8em;
+	background-color: #eee;
+	position: relative;
 }
 
+.zhenling-1-5-s span{
+	position: absolute;
+	height: 1.2em;
+	width: 1.5em;
+	top: -.3em;
+	background-color: #F9F9F9;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	text-align: center;
+}
 .zhenling-1-5-3 {
 	height: 50px;
 	width: 120px;
