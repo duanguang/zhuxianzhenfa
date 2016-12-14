@@ -890,7 +890,8 @@ function useIt() {
 	}
 	var clickType = $('#hideValue').attr('clickType');
 	var userName = $('#hideValue').attr('userName');
-	if (!ldd.isNull(clickType) && !ldd.isNull(userName) && clickType == '1') {
+	if (!ldd.isNull(clickType) && clickType == '1' &&
+		!ldd.isNull(userName) && $(obj).attr('type') != '法宝') {
 		if (allUser.length > 0) {
 			for (var i = 0; i < allUser.length; i++) {
 				if (userName == allUser[i].name) {
@@ -1141,7 +1142,7 @@ function mouseoverQueryCard(obj) {
 	}
 }
 
-function mouseoutQueryCard(obj) {
+function mouseoutQueryCard() {
 	$('#offsetCard').empty().hide();
 }
 
@@ -1151,8 +1152,7 @@ function mouseoutQueryCard(obj) {
 function addCompare() {
 	if (allUser && allUser.length > 0) {
 		var parent = $('<div class="zhenfa-compare-1"></div>'),
-			child = $('<div class="zhenfa-compare-1-1"><div class="zhenfa-compare-1-1-1">比较</div><div class="zhenfa-compare-1-1-2"><img src="image/delete.png" class="compareDelete"></div></div>'),
-			string = '';
+			child = $('<div class="zhenfa-compare-1-1"><div class="zhenfa-compare-1-1-1">比较</div><div class="zhenfa-compare-1-1-2"><img src="image/delete.png" class="compareDelete"></div></div>');
 		$('#compareDiv').append(parent);
 		parent.append(child);
 		$('.zhenfa-compare-1-1-2').click(function () {
@@ -1167,35 +1167,6 @@ function addCompare() {
 		}
 		child = $('<div class="zhenfa-compare-1-3"></div>');
 		parent.append(child);
-		//string += (qiXue != 0) ? '气血&nbsp;+' + parseInt(qiXue) + '<br/>' : '';
-		//string += (zhenQi != 0) ? '真气&nbsp;+' + parseInt(zhenQi) + '<br/>' : '';
-		//string += (yuanLi != 0) ? '元力&nbsp;+' + parseInt(yuanLi) + '<br/>' : '';
-		//string += (gongJi != 0) ? '攻击&nbsp;+' + parseInt(gongJi) + '<br/>' : '';
-		//string += (fangYu != 0) ? '防御&nbsp;+' + fangYu + '<br/>' : '';
-		//string += (puTongMingZhong != 0) ? '命中&nbsp;+' + puTongMingZhong + '<br/>' : '';
-		//string += (puTongDuoShan != 0) ? '躲闪&nbsp;+' + puTongDuoShan + '<br/>' : '';
-		//string += (zhiMingYiJiLv != 0) ? '暴击率&nbsp;+' + zhiMingYiJiLv.toFixed(2) + '%<br/>' : '';
-		//string += (zhiMingShangHai != 0) ? '暴击伤害&nbsp;+' + zhiMingShangHai.toFixed(2) + '%<br/>' : '';
-		//string += (jianMianZhiMingLv != 0) ? '被致命一击的概率减少&nbsp;' + jianMianZhiMingLv.toFixed(2) + '%<br/>' : '';
-		//string += (jianMianZhiMingShangHai != 0) ? '受到致命一击伤害减少&nbsp;' + jianMianZhiMingShangHai.toFixed(2) + '%<br/>' : '';
-		//string += (xuanYun != 0) ? '眩晕抗性&nbsp;+' + xuanYun + '<br/>' : '';
-		//string += (xuRuo != 0) ? '虚弱抗性&nbsp;+' + xuRuo + '<br/>' : '';
-		//string += (dingShen != 0) ? '定身抗性&nbsp;+' + dingShen + '<br/>' : '';
-		//string += (meiHuo != 0) ? '魅惑抗性&nbsp;+' + meiHuo + '<br/>' : '';
-		//string += (hunShui != 0) ? '昏睡抗性&nbsp;+' + hunShui + '<br/>' : '';
-		//string += (jiNengDuoShan != 0) ? '增加技能躲闪&nbsp;' + jiNengDuoShan.toFixed(2) + '<br/>' : '';
-		//string += (jiNengMingZhong != 0) ? '增加技能命中&nbsp;' + jiNengMingZhong.toFixed(2) + '<br/>' : '';
-		//string += (yuXian != 0) ? '御仙&nbsp;+' + yuXian.toFixed(2) + '%<br/>' : '';
-		//string += (yuMo != 0) ? '御魔&nbsp;+' + yuMo.toFixed(2) + '%<br/>' : '';
-		//string += (yuFo != 0) ? '御佛&nbsp;+' + yuFo.toFixed(2) + '%<br/>' : '';
-		//string += (jianMianShangHai != 0) ? '减免伤害&nbsp;+' + jianMianShangHai.toFixed(2) + '%<br/>' : '';
-		//string += (wuShiJianMian != 0) ? '无视人物伤害减免百分比&nbsp;+' + wuShiJianMian.toFixed(2) + '%<br/>' : '';
-		//string += (forXian != 0) ? '对仙阵营伤害增加百分比&nbsp;+' + forXian.toFixed(2) + '%<br/>' : '';
-		//string += (forMo != 0) ? '对魔阵营伤害增加百分比&nbsp;+' + forMo.toFixed(2) + '%<br/>' : '';
-		//string += (forFo != 0) ? '对佛阵营伤害增加百分比&nbsp;+' + forFo.toFixed(2) + '%<br/>' : '';
-		//string += (fuJiaPuTongShangHai != 0) ? '附加伤害&nbsp;+' + fuJiaPuTongShangHai + '<br/>' : '';
-		//string += (jianMianPuTongShangHai != 0) ? '减免伤害&nbsp;+' + jianMianPuTongShangHai + '<br/>' : '';
-		//string += (xiuWeiZenJia != 0) ? '获得修为&nbsp;+' + xiuWeiZenJia + '%<br/>' : '';
 		$(child).append(allPropertyString());
 	}
 	compare.push({

@@ -117,3 +117,12 @@
 	LDD.arithmetic = arithmetic;
 	$.extend(ldd, LDD);
 })();
+
+(function () {
+	var Card = function () {
+
+	};
+	Card.prototype = {
+
+	}
+})()
